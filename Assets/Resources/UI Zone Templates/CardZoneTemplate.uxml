@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="CreatureZone">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="Description" />
+        <ui:VisualElement name="Types" style="flex-direction: row-reverse;" />
+        <ui:VisualElement name="Abilities" />
+        <ui:VisualElement name="Zones" />
+        <ui:VisualElement name="Keywords" />
+        <ui:VisualElement name="Links" style="flex-direction: row; width: auto; flex-wrap: wrap;" />
+    </ui:VisualElement>
+</ui:UXML>
