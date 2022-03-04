@@ -1,3 +1,7 @@
-public interface ITargetableObject{
-    
+namespace DTOs
+{
+    public interface ITargetableObject
+    {
+
+    }
 }

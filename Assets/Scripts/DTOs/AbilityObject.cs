@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DTOs;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace DTOs
     {
         AbilityTemplate template;
         ConditionalArgSet incomingArgSet;
+        List<ITargetableObject> targets;
+        ITargetableObject origin;
 
         public AbilityObject(AbilityTemplate template, System.Object incomingArgSet){
             if(incomingArgSet.GetType() != typeof(ConditionalArgSet)){
