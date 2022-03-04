@@ -21,6 +21,6 @@ public class ReactionObserver
     }
 
     public List<> getModReactions(AbilityObject ability){
-
+        
     }
 }

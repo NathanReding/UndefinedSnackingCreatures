@@ -8,11 +8,14 @@ namespace DTOs
         public AbilityTemplate(
             string name,
             string description,
-            List<CreatureType> types
+            List<CreatureType> types,
+            string code
         ) : base(name, description)
         {
             this.types = types;
+            this.code = code;
         }
         public List<CreatureType> types;
+        public string code;
     }
 }
