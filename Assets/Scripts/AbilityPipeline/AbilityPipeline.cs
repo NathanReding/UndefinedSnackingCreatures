@@ -40,6 +40,7 @@ public class AbilityPipeline
     private void applyModifications(AbilityObject ability)
     {
         reactionObserver.getModReactions(ability);
+        
 
     }
 
