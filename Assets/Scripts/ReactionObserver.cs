@@ -42,6 +42,8 @@ public class ReactionObserver
         The reaction needs to know what type it is
     */
 
+    // TODO: EXPANSION: location based reactions. Might leverage board instead
+
     /*
 
     */

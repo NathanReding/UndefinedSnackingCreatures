@@ -28,6 +28,7 @@ public class AbilityPipeline
     {
         if (SharedCode.verifyTyping(obj, typeof(AbilityObject), "")) return;
         AbilityObject ability = obj as AbilityObject;
+        // Conditional Effects
         // Modifications
         applyModifications(ability);
         // Replacement
@@ -39,8 +40,23 @@ public class AbilityPipeline
 
     private void applyModifications(AbilityObject ability)
     {
-        reactionObserver.getModReactions(ability);
-        
+        List<(string, string)> reactions = reactionObserver.getModReactions(ability);
+        Dictionary<string, EffectObject>
+        foreach (EffectObject tempEffect in ability.effects){
+
+        }
+
+
+        foreach ((string, string) temp in reactions){
+            applyModification(temp, ability);
+        }
+
+    }
+
+
+
+
+    private void applyModification((string, string) modification, AbilityObject ability){
 
     }
 
