@@ -30,6 +30,8 @@ public class ReactionObserver
         absoluteReactions = new Dictionary<CreatureObject, List<ReactionObject>>();
     }
 
+
+    // data: (effectTarget, effect change)  TODO: give keywords counting parameters (on off, up to 3, up to 5, -1 to 1)
     public List<(string, string)> getModReactions(AbilityObject ability){
         // check reciever list for this creature
         modificationReactions

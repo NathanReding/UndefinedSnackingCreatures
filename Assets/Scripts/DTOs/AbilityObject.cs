@@ -7,11 +7,12 @@ namespace DTOs
     [System.Serializable]
     class AbilityObject
     {
-        AbilityTemplate template;
-        ConditionalArgSet incomingArgSet;
-        List<ITargetableObject> targets;
-        ITargetableObject origin;
-        List<EffectObject> effects;
+        public EffectTermSegment template; // change over to the ability type made indecription
+        // EffectTermSegment   from    AbilityTemplate
+        public ConditionalArgSet incomingArgSet;
+        public List<ITargetableObject> targets;
+        public ITargetableObject origin;
+        public List<EffectObject> effects;
 
         public AbilityObject(AbilityTemplate template, System.Object incomingArgSet){
             if(incomingArgSet.GetType() != typeof(ConditionalArgSet)){
