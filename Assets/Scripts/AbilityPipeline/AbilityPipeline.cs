@@ -6,22 +6,15 @@ public class AbilityPipeline
 
     ReactionObserver reactionObserver;
 
-    private static AbilityPipeline singleton;
+    BoardObject board;
 
-    public static AbilityPipeline getSingleton()
+    
+
+
+
+    private AbilityPipeline(BoardObject board)
     {
-        if (singleton == null)
-        {
-            singleton = new AbilityPipeline();
-        }
-        return singleton;
-    }
-
-
-
-    private AbilityPipeline()
-    {
-        reactionObserver = ReactionObserver.getSingleton();
+        this.board = board;
     }
 
     public void resolveAbility(System.Object obj)
@@ -34,8 +27,7 @@ public class AbilityPipeline
         // Replacement
         // Absolutes
         // 
-        // 
-        // 
+        // Pass ability off to board
     }
 
     private void applyModifications(AbilityObject ability)
