@@ -114,20 +114,24 @@ namespace DTOs
                 case 3
                     result = (0, -1);
                     break;
-
             }
-            if (y == 0)
+            if (direction != 2 && direction != -2 && y != 0)
             {
-                result.Item1
+                bool tempBool;
+                if (y < 0)
+                {
+                    tempBool = ((direction + 3) % 4) == 0;
+                }
+                else
+                {
+                    tempBool = ((direction + 1) % 4) == 0;
+                }
+                if(tempBool){
+                    result = (result.Item1 + 1, result.Item2)
+                }
             }
-            else if (y < 0)
-            {
 
-            }
-            else
-            {
-
-            }
+            return result;
         }
 
 
