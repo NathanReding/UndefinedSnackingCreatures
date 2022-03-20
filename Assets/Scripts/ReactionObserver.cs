@@ -34,6 +34,7 @@ public class ReactionObserver
         absoluteReactions = new Dictionary<ITargetableObject, List<ReactionObject>>();
     }
 
+    // data: (effectTarget, effect change)  TODO: give keywords counting parameters (on off, up to 3, up to 5, -1 to 1)
     public List<EffectObject> getModReactions(System.Object obj)
     {
         if (SharedCode.verifyTyping(obj, typeof(AbilityObject), "")) return null;
@@ -79,6 +80,8 @@ public class ReactionObserver
         The reaction needs to know if they are on recieve or on apply
         The reaction needs to know what type it is
     */
+
+    // TODO: EXPANSION: location based reactions. Might leverage board instead
 
     /*
 
