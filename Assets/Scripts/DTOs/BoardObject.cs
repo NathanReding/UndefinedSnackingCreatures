@@ -1,3 +1,4 @@
+using UnityEngine;
 
 namespace DTOs
 {
@@ -13,7 +14,7 @@ namespace DTOs
 
         //TODO: possible helper: in on boarder for tile(x, y)
 
-        public void BoardObject((int, int, int) size)
+        public BoardObject((int, int, int) size)
         {
             boardSize = size;
 
@@ -24,7 +25,7 @@ namespace DTOs
             }
         }
 
-        private async bool makeBoardToSize((int, int, int) size)
+        private bool makeBoardToSize((int, int, int) size)
         {
             // size defined in order of (bottom left edge, bottom edge, bottom right edge)
             if (size.Item1 <= 0 || size.Item2 <= 0 || size.Item3 <= 0) return false;
@@ -32,7 +33,7 @@ namespace DTOs
             height = size.Item1 + size.Item3 - 1;
             width = size.Item2 + size.Item3 - 1;
 
-            locations = new PositionObject[height, width]
+            locations = new PositionObject[height, width];
 
             for (int i = 0; i < height; i++)
             {
@@ -51,7 +52,7 @@ namespace DTOs
             if (!validTile(x, y)) return null;
             // passes all checks
 
-            return locations[x, y + (boardSize.Item3 - 1)]
+            return locations[x, y + (boardSize.Item3 - 1)];
 
         }
 
@@ -92,26 +93,27 @@ namespace DTOs
         public (int, int) getNeighborCordinates(int x, int y, int direction)
         {
             // 1, 2, 3 are bottom to top on right side
-            if (direction > 3 || direction == 0 || direction < -3) return null;
-            if (!validTile(x, y)) return null;
-            (int, int) result;
-            switch direction{
-                case -3
+            (int, int) errorResult = (-1, -1);
+            if (direction > 3 || direction == 0 || direction < -3) return errorResult;
+            if (!validTile(x, y)) return errorResult;
+            (int, int) result = (0, 0);
+            switch (direction){
+                case -3:
                     result = (-1, 1);
                     break;
-                case -2
+                case -2:
                     result = (-1, 0);
                     break;
-                case -1
+                case -1:
                     result = (-1, -1);
                     break;
-                case 1
-                    result = (0), 1);
+                case 1:
+                    result = (0, 1);
                     break;
-                case 2
+                case 2:
                     result = (1, 0);
                     break;
-                case 3
+                case 3:
                     result = (0, -1);
                     break;
             }
@@ -127,7 +129,7 @@ namespace DTOs
                     tempBool = ((direction + 1) % 4) == 0;
                 }
                 if(tempBool){
-                    result = (result.Item1 + 1, result.Item2)
+                    result = (result.Item1 + 1, result.Item2);
                 }
             }
 
