@@ -156,9 +156,9 @@ public class ReactionObserver
     }
 
     // TODO
-    private Dictionary<ITargetableObject, List<ReactionObject>> getDictionary(string ractionType)
+    private Dictionary<ITargetableObject, List<ReactionObject>> getDictionary(string reactionType)
     {
-        switch (ractionType)
+        switch (reactionType)
         {
             case "modification":
                 return modificationReactions;
@@ -166,6 +166,9 @@ public class ReactionObserver
                 return replacementReactions;
             case "absolute":
                 return absoluteReactions;
+            default:
+                Debug.LogError("ReactionObserver.getDictionary() not given valid string: " + reactionType);
+                return null;
         }
     }
 
@@ -190,7 +193,7 @@ public class ReactionObserver
         {
             removeEvent(obj);
         }
-        removalTriggeredEvents["tillEndOfTurn"] // replace this field with a new list
+        removalTriggeredEvents["tillEndOfTurn"] = new List<ReactionObject>(); // replace this field with a new list
     }
 
     public void removeEndOfMatchReactions()
@@ -199,7 +202,7 @@ public class ReactionObserver
         {
             removeEvent(obj);
         }
-        removalTriggeredEvents["tillEndOfMatch"] // replace this field with a new list
+        removalTriggeredEvents["tillEndOfMatch"] = new List<ReactionObject>(); // replace this field with a new list
     }
 
 

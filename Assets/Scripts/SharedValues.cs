@@ -12,6 +12,6 @@ namespace SharedScripts
         public static List<Type> validTemplateClasses = new List<Type> 
             { typeof(CardTemplate), typeof(AbilityTemplate), typeof(CreatureTemplate), typeof(Region), typeof(Zone), typeof(CreatureType), typeof(KeyWord)};
         public static List<string> validEventPersisTypes = new List<string>
-            {"forTurns", "tillEndOfTurn", "tillEndOfMatch"}
+            {"forTurns", "tillEndOfTurn", "tillEndOfMatch"};
     }
 }
