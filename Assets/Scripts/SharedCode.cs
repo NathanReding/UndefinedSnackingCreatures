@@ -18,12 +18,39 @@ namespace SharedScripts
             return true;
         }
 
-        public static Dictionary<string, AbilityTerm> toTermDictionary(List<AbilityTerm> termList){
+        public static Dictionary<string, AbilityTerm> toTermDictionary(List<AbilityTerm> termList)
+        {
             Dictionary<string, AbilityTerm> result = new Dictionary<string, AbilityTerm>();
-            foreach(AbilityTerm termObject in termList){
+            foreach (AbilityTerm termObject in termList)
+            {
                 result.Add(termObject.name, termObject);
             }
             return result;
         }
+
+        public static string getEffectDataType(string name)
+        {
+            switch (name)
+            {
+                case "gainShields":
+                    return "int";
+                case "applyKeyword":
+                    return "string";
+                case "dealDamage":
+                    return "int";
+            }
+            /*
+            gainShields
+            gainAttack
+            summon
+            heal
+            applyKeyword
+            addValidAttackOppertunity
+            dealDamage
+            */
+            return "";
+        }
+
+
     }
 }
